@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GW2 Currency Exhange</title>
+    <!-- jquery script -->
+    <script src="https://code.jquery.com/jquery-git.js"></script>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Shojumaru"
+    />
+
+    <link href="./assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="layer">
+      <h1 class="heading">GuildWars 2 Currency Conversion</h1>
+
+      <div class="row">
+        <form class="col s12">
+          <div class="row">
+            <div class="input-field col s2">
+              <input
+                placeholder="Enter your 72 Digit Guild Wars 2 API Key here"
+                id="api-key"
+                type="text"
+                class="validate"
+              />
+              <label for="first_name">API Key</label>
+            </div>
+            <div class="col s2 btn-container">
+              <a id="enter-button" class="waves-effect waves-light btn"
+                >Enter</a
+              >
+            </div>
+            <div class="col s8 btn-container">
+              <div class="row currency-container">
+                <div class="col s6 m6">
+                  <div class="card white darken-1 usd-card">
+                    <div class="card-content black-text">
+                      <span class="card-title"
+                        >Gold
+                        <p id="gold"></p
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col s6 m6">
+                  <div class="card white darken-1 usd-card">
+                    <div class="card-content black-text">
+                      <span class="card-title"
+                        >Gems
+                        <p id="gems"></p
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col s6 m6">
+                  <div class="card white darken-1 usd-card">
+                    <div class="card-content black-text">
+                      <span class="card-title"
+                        >USD
+                        <p id="usd"></p
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row currency-select">
+            
+            <div class="col s3" style="margin-left: 0">
+              <!-- <label>Materialize Select</label>
+              <select multiple>
+                <option value="" disabled selected>Choose your option</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select> -->
+              <ul id="dropdown2" class="dropdown-content">
+                <li>
+                  <a href="#!">one<span class="badge">1</span></a>
+                </li>
+                <li>
+                  <a href="#!">two<span class="new badge">1</span></a>
+                </li>
+                <li><a href="#!">three</a></li>
+              </ul>
+
+              <!-- Dynamic dropdown -->
+              <select
+                class="btn dropdown-trigger"
+                id="my-currency"
+                href="#!"
+                data-target="dropdown2"
+              >
+                Select Currency<i class="material-icons right"
+                  >arrow_drop_down</i
+                >
+                <!-- This static option is the placeholder -->
+                <!-- All currency options are dynamically generated in javascript -->
+                <option value="placeholder-option">Select Currency</option>
+              </select>
+            </div>
+            <div class="col s8 card-selected">
+              <div class="col s6 m4">
+                <div class="card white darken-1 usd-card hide">
+                  <div class="card-content black-text">
+                    <span class="card-title" id="extra-currency"
+                      >USD
+                      <p id="usd"></p
+                    ></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col api-history" id="history-buttons">
+          </div>
+        </form>
+      </div>
+
+      <!-- The Modal -->
+      <div id="my-modal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>! ALERT !</h2>
+          </div>
+          <!-- Use this div to dynamically append <p> to describe
+            error to user on the page -->
+          <div class="modal-body" id="modal-alert">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Compiled and minified JavaScript -->
+    <script src="./assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </body>
+</html>
